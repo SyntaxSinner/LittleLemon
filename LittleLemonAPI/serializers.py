@@ -2,7 +2,6 @@
 from rest_framework import serializers
 #local imports
 from .models import *
-
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
@@ -27,3 +26,8 @@ class OrderItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = OrderItem
         fields = ('order', 'menu_item', 'quantity', 'unit_price', 'price')
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('username', 'password', 'first_name', 'last_name', 'email', 'id')
