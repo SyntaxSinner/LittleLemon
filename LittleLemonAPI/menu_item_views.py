@@ -4,24 +4,24 @@ Menu Item Views
 These views handle operations related to menu items.
 
 Endpoints:
------------------------------------------------------------------------------
-| Endpoint                                     | Role       | Purpose           |
------------------------------------------------------------------------------
-| GET /api/menu-items/                         | Customer   | Retrieve all menu |
-|                                              |            | items.            |
------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+| Endpoint                                     | Role       | Purpose            |
+----------------------------------------------------------------------------------
+| GET /api/menu-items/                         | Customer   | Retrieve all menu  |
+|                                              |            | items.             |
+----------------------------------------------------------------------------------
 | GET /api/menu-items/{menu_item_id}/          | Customer   | Retrieve a specific|
-|                                              |            | menu item by ID.  |
------------------------------------------------------------------------------
-| POST /api/menu-items/                        | Manager    | Create a new menu |
-|                                              |            | item.             |
------------------------------------------------------------------------------
-| PUT /api/menu-items/{menu_item_id}/          | Manager    | Update an existing|
-|                                              |            | menu item by ID.  |
------------------------------------------------------------------------------
-| DELETE /api/menu-items/{menu_item_id}/       | Manager    | Delete a menu item|
-|                                              |            | by ID.            |
------------------------------------------------------------------------------
+|                                              |            | menu item by ID.   |
+----------------------------------------------------------------------------------
+| POST /api/menu-items/                        | Manager    | Create a new menu  |
+|                                              |            | item.              |
+----------------------------------------------------------------------------------
+| PUT /api/menu-items/{menu_item_id}/          | Manager    | Update an existing |
+|                                              |            | menu item by ID.   |
+----------------------------------------------------------------------------------
+| DELETE /api/menu-items/{menu_item_id}/       | Manager    | Delete a menu item |
+|                                              |            | by ID.             |
+----------------------------------------------------------------------------------
 
 Note:
 - Role: Specifies the role required to access the endpoint.

@@ -1,24 +1,30 @@
 """
-Menu Item Views
+User Group Management Views
 
-These views handle operations related to menu items.
+These views manage operations related to user groups.
 
 Endpoints:
------------------------------------------------------------------------------
-| Endpoint                                     | Description                | Permissions          
------------------------------------------------------------------------------
-| GET /api/menu-items/                         | Retrieve all menu items.   | Requires authentication. 
------------------------------------------------------------------------------
-| GET /api/menu-items/{menu_item_id}/          | Retrieve a specific menu   | Requires authentication. 
-|                                              | item by ID.                |                          
------------------------------------------------------------------------------
-| POST /api/menu-items/                        | Create a new menu item.    | Requires 'IsManager' permission. 
------------------------------------------------------------------------------
-| PUT /api/menu-items/{menu_item_id}/          | Update an existing menu    | Requires 'IsManager' permission. 
-|                                              | item by ID.                |                          
------------------------------------------------------------------------------
-| DELETE /api/menu-items/{menu_item_id}/       | Delete a menu item by ID.  | Requires 'IsManager' permission. 
------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+| Endpoint                                           | Role       | Purpose            |
+---------------------------------------------------------------------------------------
+| POST /api/assign-user-to-group/{group_name}/       | Manager    | Assign a user to   |
+|                                                    |            | a group            |
+----------------------------------------------------------------------------------------
+| GET /api/get-managers/                             | Manager    | Retrieve all       |
+|                                                    |            | users in manager   |
+|                                                    |            | group              |
+----------------------------------------------------------------------------------------
+| GET /api/get-delivery-crew/                        | Manager    | Retrieve all       |
+|                                                    |            | users in delivery  |
+|                                                    |            | crew group         |
+----------------------------------------------------------------------------------------
+| POST /api/remove-user-from-manager-group/{user_id}/| Manager    | Remove user from   |
+|                                                    |            | the manager group  |
+----------------------------------------------------------------------------------------
+
+Note:
+- Role: Specifies the role required to access the endpoint.
+- Purpose: Describes the purpose of the endpoint.
 """
 # The views implementation details are included below this docstring.
 
