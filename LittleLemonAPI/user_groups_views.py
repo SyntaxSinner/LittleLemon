@@ -31,13 +31,14 @@ Note:
 from django.contrib.auth.models import Group, User
 from django.http import JsonResponse
 from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAdminUser
 from rest_framework import status
 
 from .serializers import UserSerializer
 from .permissions import IsManager
 
 @api_view(['POST'])
-@permission_classes([IsManager])
+@permission_classes([IsAdminUser])
 def AssignUserToGroup(request, group_name):
     """
     Assign a user to a group (manager, delivery crew) a user who isn't assigned to a group is a customer
