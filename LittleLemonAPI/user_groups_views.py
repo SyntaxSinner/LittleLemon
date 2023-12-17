@@ -35,7 +35,6 @@ from rest_framework.permissions import IsAdminUser
 from rest_framework import status
 
 from .serializers import UserSerializer
-from .permissions import IsManager
 
 @api_view(['POST'])
 @permission_classes([IsAdminUser])
@@ -56,7 +55,6 @@ def AssignUserToGroup(request, group_name):
     return JsonResponse({'success': 'User added to group'}, status=status.HTTP_201_CREATED)
 
 @api_view(['GET'])
-@permission_classes([IsManager])
 def GetManagers(request):
     """
     Return all users in the manager group
@@ -70,7 +68,6 @@ def GetManagers(request):
     return JsonResponse(serialized_data.data, safe=False, status=status.HTTP_200_OK)
 
 @api_view(['GET'])
-@permission_classes([IsManager])
 def GetDeliveryCrew(request):
     """
     Return all users in the delivery crew group
@@ -83,7 +80,6 @@ def GetDeliveryCrew(request):
     serialized_data = UserSerializer(users, many=True)
     return JsonResponse(serialized_data.data, safe=False, status=status.HTTP_200_OK)
 
-@permission_classes([IsManager])
 @api_view(['POST'])
 def RemoveUserFromManagerGroup(request, user_id):
     """

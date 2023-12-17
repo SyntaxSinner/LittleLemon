@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-from telnetlib import AUTHENTICATION
 from .secret_key import SECRET_KEY
+from datetime import timedelta
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,6 +27,22 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_simplejwt.authentication.JWTAuthentication',),
+}
+
+SIMPLE_JWT = {  
+    'AUTH_HEADER_TYPES': ('JWT',),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+}
+
+DJOSER = {
+    'SERIALIZERS': {
+        'user_create' : 'account.serializers.UserCreateSerializer',
+    }
+}
+
 
 INSTALLED_APPS = [
     "django.contrib.admin",

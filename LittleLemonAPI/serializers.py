@@ -5,12 +5,12 @@ from .models import *
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ('slug', 'title')
+        fields = ('slug', 'title',  'pk')
 
 class MenuItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = MenuItem
-        fields = ('title', 'price', 'featured', 'category')
+        fields = ('title', 'price', 'featured', 'category', 'pk')
 
 class CartSerializer(serializers.ModelSerializer):
     class Meta:
