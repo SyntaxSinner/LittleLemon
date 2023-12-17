@@ -1,6 +1,8 @@
 # Project Title
 
-Description of your project goes here...
+This project marks my initial venture into Django and Django Rest Framework (DRF). It has been an invaluable learning experience, encompassing various aspects of API development within the MVC Architecture. Throughout this project, I've delved into writing endpoints, data validation, access control, authentication using Djoser, pagination, rate limiting, and filtering.
+
+The journey of building this project has been instrumental in my understanding of API development using Django and DRF. It served as an opportunity to grasp fundamental concepts and practices, empowering me to craft robust APIs and implement crucial functionalities.
 
 ## Table of Contents
 
